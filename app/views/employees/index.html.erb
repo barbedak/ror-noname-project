@@ -14,10 +14,15 @@
     </h2>
   </div>
   
-  <%# выводим все вопросы %>
   <% @employees.each do |employee| %>
     <div class="mt-sm container">
-      <p><%= employee.name %> - <%= employee.login %></p>
+      <p><%= employee.id%></p>
+      <p>Имя: <%= employee.name %></p>
+      <p>Логин: <%= employee.login %></p>
+      <p>
+      <%=link_to "Редактировать сотрудника", edit_employee_path(employee)%>
+      <%=button_to "Удалить сотрудника", employee_path(employee), formmethod: :delete %>
+      </p>
       <p></p>
     </div>
   <% end %>

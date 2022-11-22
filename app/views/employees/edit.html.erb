@@ -1,5 +1,5 @@
 <div class="container">
-      <%# вывод объекта - сообщения для пользователя %>
+<%# вывод объекта - сообщения для пользователя %>
       <% if flash[:notice].present? %>
         <p class= "mb mt message message-notice">
           <%= flash[:notice] %>
@@ -11,8 +11,7 @@
           <%= flash[:alert] %>
         </p>
       <% end %>
-      
-  <h2 class="title">Создание нового сотрудника</h2>
+  <h2 class="title">Редактирование сотрудника</h2>
 <p>
   <%= link_to 'Список всех сотрудников', employees_path, class: 'button button-main'%>
 </p>
@@ -47,7 +46,7 @@
       </p>
 
       <p class="mt-lg">
-        <%= form.submit 'Зарегистрировать', class: 'button button-main'%>
+        <%= form.submit 'Сохранить изменения', class: 'button button-main'%>
       </p>
     <% end %>
   </div>

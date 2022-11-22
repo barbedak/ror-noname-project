@@ -1,23 +1,23 @@
 class EmployeesController < ApplicationController
+  before_action :set_employee, only: %i[update destroy edit]
 
   def create
-    employee = Employee.create(employee_params)
-    if employee.name.present? && employee.login.present? && employee.job_title.present?
-      redirect_to employee_path(employee), notice: "Пользователь создан!"
+    if employee_params[:name].present? && employee_params[:login].present? && employee_params[:job_title].present?
+      employee = Employee.create(employee_params)
+      redirect_to employees_path, notice: "Пользователь создан!"
     else
-      flash.now[:alert] = 'Имя, Логин и Должность должны быть заполнены'
-      render :new
+      redirect_to new_employee_path(employee), notice: 'Имя, Логин и Должность должны быть заполнены!'
     end
   end
 
   def update
     @employee.update(employee_params)
-    redirect_to employee_path(@employee), notice: "Сохранили пользователя!"
+    redirect_to employee_path(@employee), notice: "Сохранили сотрудника!"
   end
 
   def destroy
     @employee.destroy
-    resirect_to employees_path, notice: "Пользователь удален!"
+    redirect_to employees_path, notice: "Сотрудник удален!"
   end
 
   def index
@@ -33,5 +33,9 @@ class EmployeesController < ApplicationController
 
   def employee_params
     params.require(:employee).permit(:name, :job_title, :login, :password)
+  end
+
+  def set_employee
+    @employee = Employee.find(params[:id])
   end
 end
