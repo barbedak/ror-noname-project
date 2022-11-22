@@ -1,0 +1,25 @@
+<div class="container">
+  <p class="mt">
+    <%= link_to "Создать нового сотрудника", new_employee_path, class: 'button button-main' %>
+  </p>
+
+  <%# <p class="mt">
+    <%= render 'form', employee: @employee
+  </p> %>
+
+  <div class="container mt-sm">
+    <h2 class="title-lg">
+      <%= @employees.count %>
+      <%= inclination(@employees.count, 'сотрудник', 'сотрудника', 'сотрудников') %>
+    </h2>
+  </div>
+  
+  <%# выводим все вопросы %>
+  <% @employees.each do |employee| %>
+    <div class="mt-sm container">
+      <p><%= employee.name %> - <%= employee.login %></p>
+      <p></p>
+    </div>
+  <% end %>
+
+</div>

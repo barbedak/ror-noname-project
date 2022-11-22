@@ -11,6 +11,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div>
+    <%# вывод объекта - сообщения для пользователя %>
+      <% if flash[:notice].present? %>
+        <p class= "mb mt message message-notice">
+          <%= flash[:notice] %>
+        </p>
+      <% end %>
+
+      <% if flash[:alert].present? %>
+        <p class= "mb mt message message-notice">
+          <%= flash[:alert] %>
+        </p>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
