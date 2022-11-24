@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_22_130925) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_24_111453) do
   create_table "checklists", force: :cascade do |t|
     t.date "date"
     t.time "time"
@@ -36,6 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_130925) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type_equipment"
   end
 
   create_table "jobtitles", force: :cascade do |t|
@@ -49,6 +50,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_130925) do
     t.boolean "special_wash"
     t.string "part_number"
     t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "typeequipments", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
