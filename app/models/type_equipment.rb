@@ -1,2 +1,0 @@
-class TypeEquipment < ApplicationRecord
-end

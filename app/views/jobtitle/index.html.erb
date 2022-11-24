@@ -1,0 +1,8 @@
+<h2>Список должностей</h2>
+<p><%= link_to 'Добавить должность', new_jobtitle_path %></p>
+<% @jobtitles.each do |jobtitle| %>
+  <p>
+    <%= jobtitle.title %> 
+    <%= button_to "Удалить должность", jobtitle_path(jobtitle), formmethod: :delete %>
+  </p>
+<% end %>
