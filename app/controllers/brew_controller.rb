@@ -2,7 +2,6 @@ class BrewController < ApplicationController
 
   def new
     @brew = Brew.new
-    
   end
 
   def create

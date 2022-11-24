@@ -1,0 +1,8 @@
+<h2>Список серий полупродукта</h2>
+<p><%= link_to 'Добавить серию полупродукта', new_series_path %></p>
+<% @serieses.each do |series| %>
+  <p>
+    <%= series.name %> 
+    <%= button_to "Удалить серию полупродукта", series_path(series), formmethod: :delete %>
+  </p>
+<% end %>

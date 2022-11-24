@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   
   resources :typeequipment, only: %i[new destroy]
   resources :employees, only: %i[new index create destroy]
+  
+  get '/series', to: 'series#index', as: 'serieses'
+  post '/series', to: 'series#create', as: 'series_index'
   resources :series
 
   get '/brew', to: 'brew#index', as: 'brews'

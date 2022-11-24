@@ -1,0 +1,9 @@
+<h2>Добавление серии полупродукта</h2>
+<p><%= link_to 'Список серий полупродукта', serieses_path %></p>
+
+<%= form_with model: @series do |form| %>
+  <p><%= form.label :name, 'Серия полупродукта' %></p>
+  <p><%= form.text_field :name %></p>
+
+  <p><%= form.submit 'Добавить' %></p>
+<% end %>
