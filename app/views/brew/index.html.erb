@@ -1,0 +1,11 @@
+<h2>Список партий полупродукта</h2>
+<p><%= link_to 'Добавить варку', new_brew_path %></p>
+<% @brews.each do |brew| %>
+  <p>
+    <%= brew.batch %> 
+    <%= brew.date %> 
+      
+
+    <%= button_to "Удалить варку", brew_path(brew), formmethod: :delete %>
+  </p>
+<% end %>

@@ -1,0 +1,20 @@
+<h2>Добавление варки</h2>
+<p><%= link_to 'Список варок', '\semiproducts' %></p>
+
+<%= form_with model: @brew do |form| %>
+  <p><%= form.label :batch, 'Партия полупродукта' %></p>
+  <p><%= form.text_field :batch %></p>
+
+  <p><%= form.label :date, 'Дата варки' %></p>
+  <p><%= form.date_field :date %></p>
+
+  <p><%= form.label :product_series, 'Серия' %></p>
+  <p><%= form.text_field :product_series %></p>
+
+  <p><%= form.label :product_name, 'Наименование' %></p>
+  <p><%= form.text_field :product_name %></p>
+
+  <p><%= form.label :special_wash, 'Спец промывка ' %> <%= form.check_box :special_wash %></p>
+
+  <p><%= form.submit 'Добавить' %></p>
+<% end %>

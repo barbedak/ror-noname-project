@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   post '/typeequipments', to: 'typeequipment#create', as: '/typeequipment_index'
   
   resources :typeequipment, only: %i[new destroy]
-  resources :employees
+  resources :employees, only: %i[new index create destroy]
+  resources :series
+  resources :brew
 end
