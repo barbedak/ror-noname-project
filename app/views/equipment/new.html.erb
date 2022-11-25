@@ -1,0 +1,12 @@
+<h2>Добавление оборудования</h2>
+<p><%= link_to 'Список оборудования', equipments_path %></p>
+
+<%= form_with model: @equipment do |form| %>
+  <p><%= form.label :name, 'Наименование оборудования' %></p>
+  <p><%= form.text_field :name %></p>
+
+  <p><%= form.label :type_equipment, 'Тип оборудования' %></p>
+  <p><%= form.text_field :type_equipment %></p>
+
+  <p><%= form.submit 'Добавить' %></p>
+<% end %>

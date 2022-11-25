@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   get '/brew', to: 'brew#index', as: 'brews'
   post '/brew', to: 'brew#create', as: 'brew_index'
   resources :brew
+
+  get '/equipments', to: 'equipment#index', as: 'equipments'
+  resources :equipment, only: %i[new index create destroy]
 end

@@ -1,0 +1,10 @@
+<h2>Список оборудования</h2>
+<p><%= link_to 'Добавить оборудование', new_equipment_path %></p>
+<% @equipments.each do |equipment| %>
+  <p>
+    <%= equipment.name %> 
+    <%= equipment.type_equipment %> 
+      
+    <%= button_to "Удалить оборудование", equipment_path(equipment), formmethod: :delete %>
+  </p>
+<% end %>
