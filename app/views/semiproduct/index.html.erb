@@ -1,0 +1,10 @@
+<h2>Список наименований полупродукта</h2>
+<p><%= link_to 'Добавить полупродукт', new_semiproduct_path %></p>
+<% @semiproducts.each do |semiproduct| %>
+  <p>
+    <%= semiproduct.name %> 
+    <%= semiproduct.series %> 
+      
+    <%= button_to "Удалить полупродукт", semiproduct_path(semiproduct), formmethod: :delete %>
+  </p>
+<% end %>

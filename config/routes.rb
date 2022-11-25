@@ -19,4 +19,8 @@ Rails.application.routes.draw do
 
   get '/equipments', to: 'equipment#index', as: 'equipments'
   resources :equipment, only: %i[new index create destroy]
+
+  get '/semiproducts', to: 'semiproduct#index', as: 'semiproducts'
+  post '/semiproducts', to: 'semiproduct#create', as: 'semiproduct_index'
+  resources :semiproduct, only: %i[new index create destroy]
 end

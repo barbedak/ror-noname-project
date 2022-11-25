@@ -1,0 +1,2 @@
+class Semiproduct < ApplicationRecord
+end
