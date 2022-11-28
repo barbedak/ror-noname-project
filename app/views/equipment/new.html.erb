@@ -6,7 +6,7 @@
   <p><%= form.text_field :name %></p>
 
   <p><%= form.label :type_equipment, 'Тип оборудования' %></p>
-  <p><%= form.text_field :type_equipment %></p>
-
+  <p><%= form.select :type_equipment, equipment_types.map {|type| type.name} %></p>
+ 
   <p><%= form.submit 'Добавить' %></p>
 <% end %>
