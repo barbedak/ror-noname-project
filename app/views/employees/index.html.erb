@@ -1,4 +1,5 @@
 <div class="container">
+  <h2>Список Сотрудников</h2>
   <p class="mt">
     <%= link_to "Создать нового сотрудника", new_employee_path, class: 'button button-main' %>
   </p>
@@ -7,20 +8,12 @@
     <%= render 'form', employee: @employee
   </p> %>
 
-  <div class="container mt-sm">
-    <h2 class="title-lg">
-      <%= @employees.count %>
-      <%= inclination(@employees.count, 'сотрудник', 'сотрудника', 'сотрудников') %>
-    </h2>
-  </div>
-  
   <% @employees.each do |employee| %>
     <div class="mt-sm container">
       <p><%= employee.id%></p>
       <p>Имя: <%= employee.name %></p>
       <p>Логин: <%= employee.login %></p>
       <p>
-      <%=link_to "Редактировать сотрудника", edit_employee_path(employee)%>
       <%=button_to "Удалить сотрудника", employee_path(employee), formmethod: :delete %>
       </p>
       <p></p>

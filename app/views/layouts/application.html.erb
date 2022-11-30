@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Project</title>
+    <title>Учет промывок</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +12,16 @@
 
   <body>
     <div>
+      <p><%= link_to 'Сотрудники', employees_path, class: 'button button-main'%></p>
+      <p><%= link_to 'Оборудование', equipments_path, class: 'button button-main' %></p>
+      <p><%= link_to 'Полупродукт', semiproducts_path, class: 'button button-main' %></p>
+      <p><%= link_to 'Варки', brews_path, class: 'button button-main' %></p>
+      <p><%= link_to 'Типы оборудования', typeequipments_path, class: 'button button-main' %></p>
+      <p><%= link_to 'Должности', '/jobtitle', class: 'button button-main' %></p>
+      <p><%= link_to 'Серии полупродукта', serieses_path, class: 'button button-main' %></p>
+    </div>
+    <div>
+
       <%= yield %>
     </div>
   </body>
