@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_141853) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_02_103506) do
   create_table "brews", force: :cascade do |t|
     t.string "batch"
     t.date "date"
@@ -43,11 +43,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_141853) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "semiproducts", force: :cascade do |t|
+  create_table "products", force: :cascade do |t|
     t.string "name"
-    t.string "series"
+    t.integer "series_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["series_id"], name: "index_products_on_series_id"
   end
 
   create_table "series", force: :cascade do |t|
@@ -62,4 +63,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_141853) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "products", "series"
 end

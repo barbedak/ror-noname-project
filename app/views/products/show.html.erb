@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @product %>
+
+<div>
+  <%= link_to "Редактировать", edit_product_path(@product) %> |
+  <%= link_to "К списку полупродуктов", products_path %>
+
+  <%= button_to "Удалить", @product, method: :delete %>
+</div>

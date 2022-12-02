@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Полупродукты</h1>
+<%= link_to "Добавить новый", new_product_path %>
+<div id="products">
+  <% @products.each do |product| %>
+    <%= render product %>
+    <p>
+      <%= link_to "Редактировать", edit_product_path(product) %>
+    </p>
+    <br>
+  <% end %>
+</div>
+
+
