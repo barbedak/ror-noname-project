@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :get_series, only: %i[new, edit, create]
 
   # GET /products or /products.json
   def index
@@ -13,25 +14,22 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
-    @series = Series.all
   end
 
   # GET /products/1/edit
   def edit
-    @series = Series.all
   end
 
   # POST /products or /products.json
   def create
     @product = Product.new(product_params)
-    @series = Series.all
     
     respond_to do |format|
       if @product.save
         # redirect_to products_path
-        format.html { redirect_to series_path(product_params[:series_id]), notice: "Product was successfully created." }
+        format.html { redirect_to series_path(product_params[:series_id]), notice: "Полупродукт #{@product.name} добавлен!" }
         # format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
-        # format.json { render :show, status: :created, location: @product }
+        format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -54,10 +52,10 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 or /products/1.json
   def destroy
+    prod = @product
     @product.destroy
-
     respond_to do |format|
-      format.html { redirect_to series_path(product_params[:series_id]), notice: "Product was successfully destroyed." }
+      format.html { redirect_to series_path(prod.series_id), notice: "Полупродукт #{prod.name} удален!" }
       format.json { head :no_content }
     end
   end

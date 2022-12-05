@@ -1,5 +1,6 @@
-<p style="color: green"><%= notice %></p>
+
 <div class="container">
+<p style="color: red" class="mb"><%= notice %></p>
   <%= render @series %>
   <div class="mb mt">
     <%= button_to "Удалить серию", @series, method: :delete, class: 'button button-main' %>
