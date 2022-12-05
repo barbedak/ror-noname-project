@@ -12,4 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require reset
+ *= require layout
+  *= require form
+ *= require text
+ *= require spacing
+ *= require button
  */

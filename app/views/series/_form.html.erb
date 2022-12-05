@@ -10,13 +10,13 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div style="display: inline-block;">
+    <div class="mt title-sm">
+      <%= form.label :name, 'Название', class: 'form-text-field' %>
+      <%= form.text_field :name, size: "30" %>
+    </div>
+    <div class="mt mr-sm">
+      <%= form.submit 'Добавить серию', class: 'button button-main' %>
+    </div>
   </div>
 <% end %>

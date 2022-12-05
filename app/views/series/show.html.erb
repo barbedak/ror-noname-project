@@ -1,15 +1,16 @@
 <p style="color: green"><%= notice %></p>
+<div class="container">
+  <%= render @series %>
+  <div class="mb mt">
+    <%= button_to "Удалить серию", @series, method: :delete, class: 'button button-main' %>
+  </div>
 
-<%= render @series %>
-<div>
-  <%= button_to "Удалить серию", @series, method: :delete %>
-</div>
-
-<div>
-  <p><%= link_to "Добавить полупродукт", new_product_path %></p>
-  <p>Список полупродуктов:</p>
-  <% @series.product.each do |product|%>
-    <p><%= product.name %> <%= button_to "Удалить", product, method: :delete %> </p>
+  <div>
+    <p  class="mb"><%= link_to "Добавить полупродукт", new_product_path, class: 'button button-main' %></p>
     <hr>
-  <% end %>
+    <p  class="mb title-sm">Список полупродуктов:</p>
+    <% @series.product.each do |product|%>
+      <p><%= product.name %> <%= button_to "Удалить", product, method: :delete, class: 'button button-main' %> </p>
+    <% end %>
+  </div>
 </div>

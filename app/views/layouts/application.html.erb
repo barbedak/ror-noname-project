@@ -11,18 +11,18 @@
   </head>
 
   <body>
-    <div>
-      <p><%= link_to 'Сотрудники', employees_path, class: 'button button-main'%></p>
-      <p><%= link_to 'Оборудование', equipments_path, class: 'button button-main' %></p>
-      <p><%= link_to 'Варки', brews_path, class: 'button button-main' %></p>
-      <p><%= link_to 'Типы оборудования', typeequipments_path, class: 'button button-main' %></p>
-      <p><%= link_to 'Должности', '/jobtitle', class: 'button button-main' %></p>
-      <p><%= link_to 'Серии полупродукта', series_index_path, class: 'button button-main' %></p>
-      <hr>
-    </div>
-    <div>
-
-      <%= yield %>
+    <div class="wrapper">
+      <div class="navbar">
+        <div><%= link_to 'Сотрудники', employees_path, class: 'button button-main'%></div>
+        <div><%= link_to 'Оборудование', equipments_path, class: 'button button-main' %></div>
+        <div><%= link_to 'Варки', brews_path, class: 'button button-main' %></div>
+        <div><%= link_to 'Типы оборудования', typeequipments_path, class: 'button button-main' %></div>
+        <div><%= link_to 'Должности', '/jobtitle', class: 'button button-main' %></div>
+        <div><%= link_to 'Серии полупродукта', series_index_path, class: 'button button-main' %></div>
+      </div>
+      <div>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
