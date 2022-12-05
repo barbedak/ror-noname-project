@@ -10,18 +10,19 @@
       </ul>
     </div>
   <% end %>
-
-  <p>
+<div>
+  <div class="mt title-sm">
     <%= form.label :name, "Наименование", style: "display: block" %>
     <%= form.text_field :name, size: "100" %>
-  </p>
+  </div>
 
-    <div>
+  <div class="mt title-sm">
     <%= form.label :series_id, "Серия " %>
     <%= form.collection_select :series_id, Series.order(:name), :id, :name  %>
   </div>
  <br>
   <div>
-    <%= form.submit "Сохранить" %>
+    <%= form.submit "Сохранить", class: "button button-main" %>
   </div>
+</div>
 <% end %>
