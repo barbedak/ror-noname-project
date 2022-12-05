@@ -11,23 +11,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, "Наименование", style: "display: block", size: "100" %>
-    <%= form.text_field :name %>
-  </div>
+  <p>
+    <%= form.label :name, "Наименование", style: "display: block" %>
+    <%= form.text_field :name, size: "100" %>
+  </p>
 
-  
-  <div>
-    <%= form.label :series_id, "Номер серии (из списка)", style: "display: block" %>
-    <%= form.text_field :series_id %>
+    <div>
+    <%= form.label :series_id, "Серия " %>
+    <%= form.collection_select :series_id, Series.order(:name), :id, :name  %>
   </div>
  <br>
   <div>
     <%= form.submit "Сохранить" %>
   </div>
-<hr>
-  <% @series.each do |series|%>
-    <p><%= series.id%> - <%= series.name%></p>
-    
-  <% end %>
 <% end %>

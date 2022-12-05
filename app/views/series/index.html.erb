@@ -2,13 +2,14 @@
 
 <h1>Серии полупродукта</h1>
 <p><%= link_to "Создать новую", new_series_path %></p>
-<br>
+<hr>
 <div id="series">
   <% @series.each do |series| %>
     <%= render series %>
     <p>
       <%= link_to "Список полупродукта", series %>
     </p>
+    <hr>
     <br>
   <% end %>
 </div>

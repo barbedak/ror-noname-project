@@ -2,6 +2,14 @@
 
 <%= render @series %>
 <div>
-  <br> 
   <%= button_to "Удалить серию", @series, method: :delete %>
+</div>
+
+<div>
+  <p><%= link_to "Добавить полупродукт", new_product_path %></p>
+  <p>Список полупродуктов:</p>
+  <% @series.product.each do |product|%>
+    <p><%= product.name %> <%= button_to "Удалить", product, method: :delete %> </p>
+    <hr>
+  <% end %>
 </div>
