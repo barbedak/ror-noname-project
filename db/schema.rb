@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_101435) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_143644) do
   create_table "brews", force: :cascade do |t|
     t.string "batch"
     t.date "date"
@@ -19,6 +19,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_101435) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_brews_on_product_id"
+  end
+
+  create_table "checklists", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "brew_id", null: false
+    t.integer "washer_id"
+    t.integer "cheking_id"
+    t.integer "equipment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brew_id"], name: "index_checklists_on_brew_id"
+    t.index ["equipment_id"], name: "index_checklists_on_equipment_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -65,5 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_101435) do
   end
 
   add_foreign_key "brews", "products"
+  add_foreign_key "checklists", "brews"
+  add_foreign_key "checklists", "equipment"
   add_foreign_key "products", "series"
 end

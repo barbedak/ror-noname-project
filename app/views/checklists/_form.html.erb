@@ -1,0 +1,57 @@
+<%= form_with(model: checklist) do |form| %>
+  <% if checklist.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(checklist.errors.count, "error") %> prohibited this checklist from being saved:</h2>
+
+      <ul>
+        <% checklist.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :start_date, style: "display: block" %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date, style: "display: block" %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.label :start_time, style: "display: block" %>
+    <%= form.time_field :start_time %>
+  </div>
+
+  <div>
+    <%= form.label :end_time, style: "display: block" %>
+    <%= form.time_field :end_time %>
+  </div>
+
+  <div>
+    <%= form.label :brew_id, style: "display: block" %>
+    <%= form.text_field :brew_id %>
+  </div>
+
+  <div>
+    <%= form.label :washer_id, style: "display: block" %>
+    <%= form.number_field :washer_id %>
+  </div>
+
+  <div>
+    <%= form.label :cheking_id, style: "display: block" %>
+    <%= form.number_field :cheking_id %>
+  </div>
+
+  <div>
+    <%= form.label :equipment_id, style: "display: block" %>
+    <%= form.text_field :equipment_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
