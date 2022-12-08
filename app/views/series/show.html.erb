@@ -3,11 +3,11 @@
 <p style="color: red" class="mb"><%= notice %></p>
   <%= render @series %>
   <div class="mb mt">
-    <%= button_to "Удалить серию", @series, method: :delete, class: 'button button-main button-red' %>
+    <%= button_to "Удалить серию", @series, method: :delete, class: 'button button-main button-delete' %>
   </div>
 
   <div>
-    <p  class="mb"><%= link_to "Добавить полупродукт", new_product_path, class: 'button button-main button-blue' %></p>
+    <p  class="mb"><%= link_to "Добавить полупродукт", new_product_path, class: 'button button-main button-add' %></p>
     <hr>
     <p  class="mb title-sm">Список полупродуктов:</p>
     <% @series.product.each do |product|%>
@@ -19,7 +19,7 @@
           <%= "Используется дополнительная промывка" %>
         <% end %>
       </p>
-      <p><%= button_to "Удалить", product, method: :delete, class: 'button button-main mb button-red' %> </p>
+      <p><%= button_to "Удалить", product, method: :delete, class: 'button button-main mb button-delete' %> </p>
     <% end %>
   </div>
 </div>
