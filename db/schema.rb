@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_071701) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_101435) do
   create_table "brews", force: :cascade do |t|
     t.string "batch"
     t.date "date"
-    t.string "semiproduct_series"
-    t.string "semiproduct_name"
-    t.boolean "special_wash"
+    t.integer "product_id", null: false
+    t.boolean "washed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_brews_on_product_id"
   end
 
   create_table "employees", force: :cascade do |t|
@@ -64,5 +64,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_071701) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "brews", "products"
   add_foreign_key "products", "series"
 end

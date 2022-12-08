@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :brews
   resources :products
   resources :series
   get '/jobtitle', to: 'jobtitle#index', as: 'jobtitles'
@@ -10,10 +11,6 @@ Rails.application.routes.draw do
   
   resources :typeequipment, only: %i[new destroy]
   resources :employees, only: %i[new index create destroy]
-  
-  get '/brew', to: 'brew#index', as: 'brews'
-  post '/brew', to: 'brew#create', as: 'brew_index'
-  resources :brew
 
   get '/equipments', to: 'equipment#index', as: 'equipments'
   resources :equipment, only: %i[new index create destroy]

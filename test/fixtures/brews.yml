@@ -2,14 +2,12 @@
 
 one:
   batch: MyString
-  date: 2022-11-24
-  semiproduct_series: MyString
-  semiproduct_name: MyString
-  special_wash: false
+  date: 2022-12-08
+  product: one
+  washed: false
 
 two:
   batch: MyString
-  date: 2022-11-24
-  semiproduct_series: MyString
-  semiproduct_name: MyString
-  special_wash: false
+  date: 2022-12-08
+  product: two
+  washed: false
