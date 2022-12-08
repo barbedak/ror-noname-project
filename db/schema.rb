@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_143644) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_144919) do
   create_table "brews", force: :cascade do |t|
     t.string "batch"
     t.date "date"
@@ -18,6 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143644) do
     t.boolean "washed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "checklist_id"
+    t.integer "equipment_id"
+    t.index ["checklist_id"], name: "index_brews_on_checklist_id"
+    t.index ["equipment_id"], name: "index_brews_on_equipment_id"
     t.index ["product_id"], name: "index_brews_on_product_id"
   end
 
@@ -79,6 +83,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_143644) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "brews", "checklists"
+  add_foreign_key "brews", "equipment"
   add_foreign_key "brews", "products"
   add_foreign_key "checklists", "brews"
   add_foreign_key "checklists", "equipment"
