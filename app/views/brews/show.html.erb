@@ -2,9 +2,7 @@
 
 <%= render @brew %>
 
-<div>
-  <%= link_to "Edit this brew", edit_brew_path(@brew) %> |
-  <%= link_to "Back to brews", brews_path %>
-
-  <%= button_to "Destroy this brew", @brew, method: :delete %>
+<div class="mt">
+  <%= link_to "Редактировать", edit_brew_path(@brew) , class: 'button button-main button-add' %>
+  <%= button_to "Удалить", @brew, method: :delete, class: 'button button-main button-delete mb' %>
 </div>

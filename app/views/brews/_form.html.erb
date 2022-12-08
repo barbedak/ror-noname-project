@@ -27,8 +27,18 @@
       <%# grouped_collection_select _имя возвращаемого парамета_, список серий, полупродукт в серии, имя серии, id полупродукта, имя полупродукта %>
     </div>
 
+    <div class="mt title-sm" style="display: block">
+      <%= form.label :equipment_id,"Оборудование : " %>
+      <%= form.collection_select :equipment_id, Equipment.order(:name), :id, :name, {prompt: "Выбирите оборудование"}%>
+    </div>
+
+    <div class="mt title-sm" style="display: block">
+      <%= form.label :checklist_id,"Протокол промывки : " %>
+      <%= form.collection_select :checklist_id, Checklist.order(:name), :id, :name, {prompt: "Выбирите протокол промывки"} %>
+    </div>
+
   </div>
   <div class="mt">
-    <%= form.submit "Добавить",class: "button button-main button-add" %>
+    <%= form.submit "Сохранить",class: "button button-main button-add" %>
   </div>
 <% end %>

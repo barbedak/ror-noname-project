@@ -6,8 +6,11 @@
   <%= link_to "Добавить", new_brew_path, class: 'button button-main button-add mt' %>
   <div id="brews" class="mt">
     <% @brews.each do |brew| %>
-      <%= render brew %>
-      <%= button_to "Удалить", @brew, method: :delete, class: 'button button-main button-delete mb' %>
+      <div class="mb ml-md">
+        <%= link_to "#{brew.date} #{brew.batch}", brew, class: "link" %>
+      </div>
+      <%#= render brew %>
+     
     <% end %>
   </div>
 </div>
