@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_02_103506) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_08_071701) do
   create_table "brews", force: :cascade do |t|
     t.string "batch"
     t.date "date"
@@ -48,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_02_103506) do
     t.integer "series_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "special_wash"
     t.index ["series_id"], name: "index_products_on_series_id"
   end
 
