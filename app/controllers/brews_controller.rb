@@ -4,6 +4,7 @@ class BrewsController < ApplicationController
   # GET /brews or /brews.json
   def index
     @brews = Brew.all
+    @products = Product.all
   end
 
   # GET /brews/1 or /brews/1.json
@@ -25,7 +26,8 @@ class BrewsController < ApplicationController
 
     respond_to do |format|
       if @brew.save
-        format.html { redirect_to brew_url(@brew), notice: "Brew was successfully created." }
+        # format.html { redirect_to brew_url(@brew), notice: "Варка успешно добавлена" }
+        format.html { redirect_to brews_path, notice: "Варка успешно добавлена" }
         format.json { render :show, status: :created, location: @brew }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +40,7 @@ class BrewsController < ApplicationController
   def update
     respond_to do |format|
       if @brew.update(brew_params)
-        format.html { redirect_to brew_url(@brew), notice: "Brew was successfully updated." }
+        format.html { redirect_to brew_url(@brew), notice: "Варка успешно обновлена" }
         format.json { render :show, status: :ok, location: @brew }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +54,7 @@ class BrewsController < ApplicationController
     @brew.destroy
 
     respond_to do |format|
-      format.html { redirect_to brews_url, notice: "Brew was successfully destroyed." }
+      format.html { redirect_to brews_url, notice: "Варка удалена" }
       format.json { head :no_content }
     end
   end

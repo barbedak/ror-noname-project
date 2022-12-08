@@ -30,3 +30,8 @@ a, button {
 .text-bold{
   font-weight: bold;
 }
+
+.text{
+  color:brown;
+  display: inline;
+}

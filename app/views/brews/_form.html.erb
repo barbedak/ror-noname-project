@@ -10,28 +10,25 @@
       </ul>
     </div>
   <% end %>
+  <div style="display: inline-block" class="mt">
+    <div class="mt title-sm mr-lg" style="display: inline">
+      <%= form.label :batch,"Партия : "%>
+      <%= form.text_field :batch, class: 'form-text-field'%>
+    </div>
 
-  <div>
-    <%= form.label :batch, style: "display: block" %>
-    <%= form.text_field :batch %>
+    <div class="mt title-sm" style="display: inline">
+      <%= form.label :date,"Дата : " %>
+      <%= form.date_field :date %>
+    </div>
+
+    <div class="mt title-sm" style="display: block">
+      <%= form.label :product_id, "Полупродукт :" %>
+      <%= form.grouped_collection_select :product_id, Series.order(:name), :product, :name, :id, :name%>
+      <%# grouped_collection_select _имя возвращаемого парамета_, список серий, полупродукт в серии, имя серии, id полупродукта, имя полупродукта %>
+    </div>
+
   </div>
-
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
-    <%= form.label :product_id, style: "display: block" %>
-    <%= form.text_field :product_id %>
-  </div>
-
-  <div>
-    <%= form.label :washed, style: "display: block" %>
-    <%= form.check_box :washed %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="mt">
+    <%= form.submit "Добавить",class: "button button-main button-add" %>
   </div>
 <% end %>

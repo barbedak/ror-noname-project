@@ -1,22 +1,26 @@
-<div id="<%= dom_id brew %>">
-  <p>
-    <strong>Batch:</strong>
+<div id="<%= dom_id brew %>" style="display: block">
+  <div style="display: block" >
+    <div class="text">Партия:</div>
     <%= brew.batch %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Date:</strong>
+  <div style="display: block">
+    <div class="text">Дата:</div>
     <%= brew.date %>
-  </p>
+  </div>
 
-  <p>
-    <strong>Product:</strong>
-    <%= brew.product_id %>
-  </p>
+  <div style="display: block">
+    <div class="text">Полупродукт:</div>
+    <%= Product.find(brew.product_id).name %>
+  </div>
 
-  <p>
-    <strong>Washed:</strong>
-    <%= brew.washed %>
+  <div style="display: block">
+    <div class="text">Оборудование промывалось :</div>
+    <% if brew.washed %>
+      <%= "ДА"%>
+    <% else %>
+      <%= "НЕТ"%>
+    <% end%>
   </p>
 
 </div>
