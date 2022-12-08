@@ -11,7 +11,15 @@
     <hr>
     <p  class="mb title-sm">Список полупродуктов:</p>
     <% @series.product.each do |product|%>
-      <p><%= product.name %> <%= button_to "Удалить", product, method: :delete, class: 'button button-main' %> </p>
+      <p>
+        <%= product.name %> 
+      </p>
+      <p>
+        <% if product.special_wash %>
+          <%= "Используется дополнительная промывка" %>
+        <% end %>
+      </p>
+      <p><%= button_to "Удалить", product, method: :delete, class: 'button button-main mb' %> </p>
     <% end %>
   </div>
 </div>

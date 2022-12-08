@@ -20,6 +20,12 @@
     <%= form.label :series_id, "Серия " %>
     <%= form.collection_select :series_id, Series.order(:name), :id, :name  %>
   </div>
+
+    <div class="mt title-sm">
+    <%= form.check_box :special_wash %>
+    <%= form.label :special_wash, "дополнительная промывка" %>
+    
+  </div>
  <br>
   <div>
     <%= form.submit "Сохранить", class: "button button-main" %>
