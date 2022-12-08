@@ -1,13 +1,13 @@
 <p style="color: green"><%= notice %></p>
 <div class="container">
   <div class="title-lg">Серии полупродукта</div>
-  <div class="mt mb"><%= link_to "Создать новую", new_series_path, class: 'button button-main' %></div>
+  <div class="mt mb"><%= link_to "Создать новую", new_series_path, class: 'button button-main button-blue' %></div>
   <hr>
   <div id="series" class="mt">
     <% @series.each do |series| %>
       <%= render series %>
       <div class="mb mt-sm">
-        <%= link_to "Список полупродукта", series, class: 'button button-main' %>
+        <%= link_to "Список полупродукта", series, class: 'button button-main button-turq' %>
       </div>
       <br>
     <% end %>

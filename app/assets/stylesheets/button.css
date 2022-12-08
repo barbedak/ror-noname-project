@@ -12,6 +12,14 @@
   background-color: #217721;
 }
 
-.button-yellow{
-  background-color: #ffba08;
+.button-turq{
+  background-color: #36c0ca;
+}
+
+.button-red{
+  background-color: rgb(202, 57, 57);
+}
+
+.button-blue {
+  background-color: rgb(22, 135, 180);
 }
