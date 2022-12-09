@@ -25,7 +25,7 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       if @checklist.save
-        format.html { redirect_to checklist_url(@checklist), notice: "Checklist was successfully created." }
+        format.html { redirect_to checklists_url, notice: "Протокол успешно добавлен" }
         format.json { render :show, status: :created, location: @checklist }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ChecklistsController < ApplicationController
   def update
     respond_to do |format|
       if @checklist.update(checklist_params)
-        format.html { redirect_to checklist_url(@checklist), notice: "Checklist was successfully updated." }
+        format.html { redirect_to checklist_url(@checklist), notice: "Протокол успешно обновлен." }
         format.json { render :show, status: :ok, location: @checklist }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -61,6 +61,10 @@ class ChecklistsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_checklist
       @checklist = Checklist.find(params[:id])
+      @brew = Brew.find(@checklist.brew_id)
+      @washer = Employee.find(@checklist.washer_id)
+      @checking = Employee.find(@checklist.checking_id)
+      @equipment = Equipment.find(@checklist.equipment_id)
     end
 
     # Only allow a list of trusted parameters through.

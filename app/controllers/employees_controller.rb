@@ -2,12 +2,8 @@ class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[update destroy edit]
 
   def create
-    if employee_params[:name].present? && employee_params[:login].present? && employee_params[:job_title].present?
       employee = Employee.create(employee_params)
       redirect_to employees_path, notice: "Пользователь создан!"
-    else
-      redirect_to new_employee_path(employee), notice: 'Имя, Логин и Должность должны быть заполнены!'
-    end
   end
 
   def update

@@ -1,41 +1,41 @@
-<div id="<%= dom_id checklist %>">
+<div id="<%= dom_id checklist %>" class>
   <p>
-    <strong>Start date:</strong>
+    <strong>Дата начала:</strong>
     <%= checklist.start_date %>
   </p>
 
   <p>
-    <strong>End date:</strong>
+    <strong>Дата окончания:</strong>
     <%= checklist.end_date %>
   </p>
 
   <p>
-    <strong>Start time:</strong>
+    <strong>Время начала:</strong>
     <%= checklist.start_time %>
   </p>
 
   <p>
-    <strong>End time:</strong>
+    <strong>Время окончания:</strong>
     <%= checklist.end_time %>
   </p>
 
   <p>
-    <strong>Brew:</strong>
-    <%= checklist.brew_id %>
+    <strong>Варка:</strong>
+    <%= @brew.batch %>
   </p>
 
   <p>
-    <strong>Washer:</strong>
-    <%= checklist.washer_id %>
+    <strong>Мойщик:</strong>
+    <%= @washer.name %>
   </p>
 
   <p>
-    <strong>Cheking:</strong>
-    <%= checklist.cheking_id %>
+    <strong>Проверяющий:</strong>
+    <%= @cheking.name %>
   </p>
 
   <p>
-    <strong>Equipment:</strong>
+    <strong>Оборудование:</strong>
     <%= checklist.equipment_id %>
   </p>
 

@@ -11,47 +11,49 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :start_date, style: "display: block" %>
-    <%= form.date_field :start_date %>
-  </div>
+  <div style="display: inline-block">
+    <div>
+      <% form.label :start_date, style: "display: block" %>
+      <% form.text_field :start_date %>
+    </div>
 
-  <div>
-    <%= form.label :end_date, style: "display: block" %>
-    <%= form.date_field :end_date %>
-  </div>
+    <div>
+      <% form.label :end_date, style: "display: block" %>
+      <% form.date_field :end_date %>
+    </div>
 
-  <div>
-    <%= form.label :start_time, style: "display: block" %>
-    <%= form.time_field :start_time %>
-  </div>
+    <div>
+      <% form.label :start_time, style: "display: block" %>
+      <% form.time_field :start_time %>
+    </div>
 
-  <div>
-    <%= form.label :end_time, style: "display: block" %>
-    <%= form.time_field :end_time %>
-  </div>
+    <div>
+      <% form.label :end_time, style: "display: block" %>
+      <% form.time_field :end_time %>
+    </div>
 
-  <div>
-    <%= form.label :brew_id, style: "display: block" %>
-    <%= form.text_field :brew_id %>
-  </div>
+    <div class="mt title-sm" style="display: block">
+      <%= form.label :brew_id, "Варка"%>
+      <%= form.collection_select :brew_id, Brew.order(:batch), :id, :batch %>
+    </div>
 
-  <div>
-    <%= form.label :washer_id, style: "display: block" %>
-    <%= form.number_field :washer_id %>
-  </div>
+    <div class="mt title-sm" style="display: block">
+      <%= form.label :equipment_id, "Оборудование"%>
+      <%= form.collection_select :equipment_id, Equipment.order(:name), :id, :name %>
+    </div>
 
-  <div>
-    <%= form.label :cheking_id, style: "display: block" %>
-    <%= form.number_field :cheking_id %>
-  </div>
+    <div class="mt title-sm" style="display: block">
+      <%= form.label :washer_id, "Мойщик"%>
+      <%= form.collection_select :washer_id, Employee.order(:name), :id, :name,  {prompt: "Укажите сотрудника"} %>
+    </div>
 
-  <div>
-    <%= form.label :equipment_id, style: "display: block" %>
-    <%= form.text_field :equipment_id %>
-  </div>
+    <div class="mt title-sm" style="display: block">
+      <%= form.label :cheking_id, "Проверяющий"%>
+      <%= form.collection_select :washer_id, Employee.order(:name), :id, :name, {prompt: "Укажите сотрудника"} %>
+    </div>
 
-  <div>
-    <%= form.submit %>
+    <div>
+      <%= form.submit "Сохранить", class: "button buttob-main button-add mt" %>
+    </div>
   </div>
 <% end %>

@@ -6,7 +6,7 @@ body {
 
 .wrapper{
   max-width: 800px;
-  margin: 40px;
+  margin: 20px;
   width: 100%;
 }
 
@@ -27,7 +27,7 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  
+  flex-wrap: wrap;
 }
 
 .navbar a{
