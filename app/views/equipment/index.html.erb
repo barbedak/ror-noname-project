@@ -1,10 +1,14 @@
-<h2>Список оборудования</h2>
-<p><%= link_to 'Добавить оборудование', new_equipment_path %></p>
-<% @equipments.each do |equipment| %>
-  <p>
-    <%= equipment.name %> 
-    <%= equipment.type_equipment %> 
-      
-    <%= button_to "Удалить оборудование", equipment_path(equipment), formmethod: :delete %>
-  </p>
-<% end %>
+<p style="color: green"><%= notice %></p>
+
+<h1>Equipment</h1>
+
+<div id="equipment">
+  <% @equipment.each do |equipment| %>
+    <%= render equipment %>
+    <p>
+      <%= link_to "Show this equipment", equipment %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New equipment", new_equipment_path %>

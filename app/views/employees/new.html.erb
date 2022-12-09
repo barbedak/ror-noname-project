@@ -1,49 +1,9 @@
-<div class="container">
-      <%# вывод объекта - сообщения для пользователя %>
-      <% if flash[:notice].present? %>
-        <p class= "mb mt message message-notice">
-          <%= flash[:notice] %>
-        </p>
-      <% end %>
+<h1>New employee</h1>
 
-      <% if flash[:alert].present? %>
-        <p class= "mb mt message message-notice">
-          <%= flash[:alert] %>
-        </p>
-      <% end %>
-      
-  <h2 class="title">Создание нового сотрудника</h2>
-  <div class="mt">
-    <%= form_with model: @employee do |form| %>
-      <p>
-        <%= form.label :name, 'Имя сотрудника' %>
-      </p>
-      <p>
-        <%= form.text_field :name, class: 'form-text-field' %>
-      </p>
-      
-      <p class="mt"> <%= form.label :job_title, 'Должность' %> </p>
-      <p>
-        <%= form.select :job_title, job_titles.map{ |title| title.title } %>
-      </p>
-      
-      <p class="mt">
-        <%=form.label :login, 'Логин' %>
-      </p>
-      <p>
-        <%= form.text_field :login, class: 'form-text-field' %>
-      </p>
-      
-      <p class="mt">
-        <%= form.label :password, 'Пароль' %>
-      </p>
-      <p>
-        <%= form.password_field :password, class: 'form-text-field' %>
-      </p>
+<%= render "form", employee: @employee %>
 
-      <p class="mt-lg">
-        <%= form.submit 'Зарегистрировать', class: 'button button-main'%>
-      </p>
-    <% end %>
-  </div>
+<br>
+
+<div>
+  <%= link_to "Back to employees", employees_path %>
 </div>

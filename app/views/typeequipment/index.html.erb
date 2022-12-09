@@ -1,8 +1,0 @@
-<h2>Список типов оборудования</h2>
-<p><%= link_to 'Добавить тип оборудования', new_typeequipment_path %></p>
-<% @typeequipments.each do |type| %>
-  <p>
-    <%= type.name %> 
-    <%= button_to "Удалить тип оборудования", typeequipment_path(type), formmethod: :delete %>
-  </p>
-<% end %>

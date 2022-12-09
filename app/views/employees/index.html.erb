@@ -1,23 +1,14 @@
-<div class="container">
-  <h2>Список Сотрудников</h2>
-  <p class="mt">
-    <%= link_to "Создать нового сотрудника", new_employee_path, class: 'button button-main' %>
-  </p>
+<p style="color: green"><%= notice %></p>
 
-  <%# <p class="mt">
-    <%= render 'form', employee: @employee
-  </p> %>
+<h1>Employees</h1>
 
+<div id="employees">
   <% @employees.each do |employee| %>
-    <div class="mt-sm container">
-      <p><%= employee.id%></p>
-      <p>Имя: <%= employee.name %></p>
-      <p>Логин: <%= employee.login %></p>
-      <p>
-      <%=button_to "Удалить сотрудника", employee_path(employee), formmethod: :delete %>
-      </p>
-      <p></p>
-    </div>
+    <%= render employee %>
+    <p>
+      <%= link_to "Show this employee", employee %>
+    </p>
   <% end %>
-
 </div>
+
+<%= link_to "New employee", new_employee_path %>
