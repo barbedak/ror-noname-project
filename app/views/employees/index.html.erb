@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Employees</h1>
-
-<div id="employees">
-  <% @employees.each do |employee| %>
-    <%= render employee %>
-    <p>
-      <%= link_to "Show this employee", employee %>
-    </p>
-  <% end %>
+<div class="container">
+  <div class="title-md">Список сотрудников</div>
+  <%= link_to "Добавить", new_employee_path, class: "button button-main button-add mt-sm" %>
+  <div id="employees">
+    <% @employees.each do |employee| %>
+      <%= render employee %>
+      <div>
+        <%= link_to "Редактировать", edit_employee_path(employee), class: "button button-main button-show" %>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New employee", new_employee_path %>
