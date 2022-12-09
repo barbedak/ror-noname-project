@@ -13,11 +13,11 @@
   <body>
     <div class="wrapper">
       <div class="navbar">
-        <div><%= link_to 'Сотрудники', employees_path, class: 'button button-main'%></div>
-        <div><%= link_to 'Оборудование', equipments_path, class: 'button button-main' %></div>
         <div><%= link_to 'Варки', brews_path, class: 'button button-main' %></div>
-        <div><%= link_to 'Типы оборудования', typeequipments_path, class: 'button button-main' %></div>
-        <div><%= link_to 'Должности', '/jobtitle', class: 'button button-main' %></div>
+        <div><%= link_to 'Оборудование', equipment_index_path, class: 'button button-main' %></div>
+        <div><%= link_to 'Типы оборудования', equipment_types_path, class: 'button button-main' %></div>
+        <div><%= link_to 'Должности', job_titles_path , class: 'button button-main' %></div>
+        <div><%= link_to 'Сотрудники', employees_path, class: 'button button-main'%></div>
         <div><%= link_to 'Серии полупродукта', series_index_path, class: 'button button-main' %></div>
         <div class="mt-sm"><%= link_to 'Протоколы промывки', checklists_path, class: 'button button-main' %></div>
       </div>
