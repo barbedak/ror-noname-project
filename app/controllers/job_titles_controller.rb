@@ -25,7 +25,7 @@ class JobTitlesController < ApplicationController
 
     respond_to do |format|
       if @job_title.save
-        format.html { redirect_to job_title_url(@job_title), notice: "Job title was successfully created." }
+        format.html { redirect_to job_titles_path, notice: "Должность успшно добавлена" }
         format.json { render :show, status: :created, location: @job_title }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class JobTitlesController < ApplicationController
   def update
     respond_to do |format|
       if @job_title.update(job_title_params)
-        format.html { redirect_to job_title_url(@job_title), notice: "Job title was successfully updated." }
+        format.html { redirect_to job_titles_url, notice: "Должность успшно добавлена обновлена" }
         format.json { render :show, status: :ok, location: @job_title }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class JobTitlesController < ApplicationController
     @job_title.destroy
 
     respond_to do |format|
-      format.html { redirect_to job_titles_url, notice: "Job title was successfully destroyed." }
+      format.html { redirect_to job_titles_url, notice: "Должность удалена" }
       format.json { head :no_content }
     end
   end

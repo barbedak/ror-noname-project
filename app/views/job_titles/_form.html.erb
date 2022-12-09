@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="title-sm mb mt">
+    <%= form.label :name, "Наименование"%>
+    <%= form.text_field :name%>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Сохранить", class: "button button-main button-add"%>
   </div>
 <% end %>

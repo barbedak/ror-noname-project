@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
+<div class="container">
+  <div class="title-md mb-sm">Список должностей</div>
+  <%= link_to "Добавить", new_job_title_path, class: "button button-main button-add mb" %>
+  <div id="job_titles" style="display : inline">
+    <% @job_titles.each do |job_title| %>
+        <%= render job_title %>
+      <div class="mb mt-sm">
+        <%= link_to "Редактировать", edit_job_title_path(job_title), class: "button button-main button-edit" %>
+        <%= button_to "Удалить", @job_title, method: :delete, class: "button button-main button-delete"%>
+      </div>
+    <% end %>
+  </div>
 
-<h1>Job titles</h1>
 
-<div id="job_titles">
-  <% @job_titles.each do |job_title| %>
-    <%= render job_title %>
-    <p>
-      <%= link_to "Show this job title", job_title %>
-    </p>
-  <% end %>
 </div>
-
-<%= link_to "New job title", new_job_title_path %>
