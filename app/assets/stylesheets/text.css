@@ -33,5 +33,16 @@ a, button {
 
 .text{
   color:brown;
+}
+
+.text-green{
+  color: #217721;
+}
+
+.inline{
   display: inline;
+}
+
+.block{
+  display: block;
 }

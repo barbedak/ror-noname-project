@@ -1,12 +1,17 @@
-<div id="<%= dom_id employee %>">
-  <p>
-    <strong>Name:</strong>
-    <%= employee.name %>
-  </p>
+<div id="<%= dom_id employee %>" class="mt">
 
-  <p>
-    <strong>Job title:</strong>
-    <%= employee.job_title_id %>
-  </p>
+  <div >
+    <div class="inline text">Имя:</div>
+    <div class="inline title-sm"><%= employee.name %></div>
+  </div>
 
+  <div class="mt-sm">
+    <div class="inline text">Должность:</div>
+    <div class="inline title-sm"><%= JobTitle.find(employee.job_title_id).name%></div>
+  </div>
+
+  <div>
+    <%= link_to "Редактировать", edit_employee_path(employee), class: "button button-main button-edit mt-sm" %>
+    <%= button_to "Удалить", employee, method: :delete, class: "button button-main button-delete" %>
+  </div>
 </div>

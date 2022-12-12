@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="mt">
+    <%= form.label :name, "Имя", class: "inline text" %>
+    <%= form.text_field :name, class: "inline" %>
+  </div>
+
+  <div class="mt-sm">
+    <%= form.label :job_title_id, "Должность", class: "inline text" %>
+    <%= form.collection_select :job_title_id, JobTitle.order(:name), :id, :name, class: "inline" %>
   </div>
 
   <div>
-    <%= form.label :job_title_id, style: "display: block" %>
-    <%= form.number_field :job_title_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <%= form.submit "Сохранить", class: "button button-main button-add mt" %>
   </div>
 <% end %>
