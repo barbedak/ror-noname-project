@@ -40,14 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_080841) do
     t.index ["equipment_id"], name: "index_checklists_on_equipment_id"
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string "name"
-    t.integer "job_titles_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["job_titles_id"], name: "index_employees_on_job_titles_id"
-  end
-
   create_table "equipment", force: :cascade do |t|
     t.string "name"
     t.integer "equipment_types_id", null: false
@@ -88,7 +80,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_080841) do
   add_foreign_key "brews", "products"
   add_foreign_key "checklists", "brews"
   add_foreign_key "checklists", "equipment"
-  add_foreign_key "employees", "job_titles", column: "job_titles_id"
   add_foreign_key "equipment", "equipment_types", column: "equipment_types_id"
   add_foreign_key "products", "series"
 end

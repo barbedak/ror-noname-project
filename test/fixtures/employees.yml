@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  job_titles: one
+  job_title_id: 1
 
 two:
   name: MyString
-  job_titles: two
+  job_title_id: 1
