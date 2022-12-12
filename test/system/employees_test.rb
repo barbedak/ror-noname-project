@@ -14,7 +14,7 @@ class EmployeesTest < ApplicationSystemTestCase
     visit employees_url
     click_on "New employee"
 
-    fill_in "Job titles", with: @employee.job_titles_id
+    fill_in "Job title", with: @employee.job_title_id
     fill_in "Name", with: @employee.name
     click_on "Create Employee"
 
@@ -26,7 +26,7 @@ class EmployeesTest < ApplicationSystemTestCase
     visit employee_url(@employee)
     click_on "Edit this employee", match: :first
 
-    fill_in "Job titles", with: @employee.job_titles_id
+    fill_in "Job title", with: @employee.job_title_id
     fill_in "Name", with: @employee.name
     click_on "Update Employee"
 

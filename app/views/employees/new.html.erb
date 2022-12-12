@@ -1,4 +1,9 @@
-<div class="container">
-  <div class="title-md">Новый сотрудник</div>
-  <%= render "form", employee: @employee %>
+<h1>New employee</h1>
+
+<%= render "form", employee: @employee %>
+
+<br>
+
+<div>
+  <%= link_to "Back to employees", employees_path %>
 </div>
