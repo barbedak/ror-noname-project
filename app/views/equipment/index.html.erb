@@ -1,14 +1,17 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
 
-<h1>Equipment</h1>
+  <div class="title-md mb">Оборудование</div>
 
-<div id="equipment">
-  <% @equipment.each do |equipment| %>
-    <%= render equipment %>
-    <p>
-      <%= link_to "Show this equipment", equipment %>
-    </p>
-  <% end %>
+  <%= link_to "Добавить", new_equipment_path, class: "button button-main button-add" %>
+  <div id="equipment">
+    <% @equipment.each do |equipment| %>
+      <%= render equipment %>
+      <div>
+        <%= link_to "Изменить", edit_equipment_path(equipment), class: "button button-main button-show" %>
+        <%= button_to "Удалить", equipment, method: :delete, class: "button button-main button-delete" %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
-
-<%= link_to "New equipment", new_equipment_path %>

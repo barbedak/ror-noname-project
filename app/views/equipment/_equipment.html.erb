@@ -1,12 +1,12 @@
 <div id="<%= dom_id equipment %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Название:</strong>
     <%= equipment.name %>
   </p>
 
   <p>
-    <strong>Equipment types:</strong>
-    <%= equipment.equipment_types_id %>
+    <strong>Тип оборудования:</strong>
+    <%= EquipmentType.find(equipment.equipment_types_id).name %>
   </p>
 
 </div>

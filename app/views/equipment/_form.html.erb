@@ -12,16 +12,16 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
+    <%= form.label :name, "Наименование", style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
   <div>
-    <%= form.label :equipment_types_id, style: "display: block" %>
-    <%= form.text_field :equipment_types_id %>
+    <%= form.label :equipment_types_id, "Тип оборудования", style: "display: block" %>
+    <%= form.collection_select :equipment_types_id, EquipmentType.order(:name), :id, :name %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Добавить" %>
   </div>
 <% end %>

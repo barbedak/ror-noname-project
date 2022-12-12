@@ -2,8 +2,8 @@
 
 one:
   name: MyString
-  equipment_types: one
+  equipment_types_id: 1
 
 two:
   name: MyString
-  equipment_types: two
+  equipment_types_id: 1
