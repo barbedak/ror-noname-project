@@ -1,5 +1,5 @@
 class ChecklistsController < ApplicationController
-  before_action :set_checklist, only: %i[ show edit update destroy ]
+  before_action :set_checklist, only: %i[ show edit update destroy]
 
   # GET /checklists or /checklists.json
   def index
@@ -25,6 +25,8 @@ class ChecklistsController < ApplicationController
 
     respond_to do |format|
       if @checklist.save
+        @brew = Brew.find(@checklist.brew_id)
+        @brew.update(checklist_id: @checklist.id)
         format.html { redirect_to checklists_url, notice: "Протокол успешно добавлен" }
         format.json { render :show, status: :created, location: @checklist }
       else
@@ -62,8 +64,8 @@ class ChecklistsController < ApplicationController
     def set_checklist
       @checklist = Checklist.find(params[:id])
       @brew = Brew.find(@checklist.brew_id)
-      @washer = Employee.find(@checklist.washer_id)
-      @checking = Employee.find(@checklist.checking_id)
+      @washer = Employee.find(@checklist.washer_id) unless @checklist.washer_id.nil?
+      @checking = Employee.find(@checklist.cheking_id) unless @checklist.cheking_id.nil?
       @equipment = Equipment.find(@checklist.equipment_id)
     end
 

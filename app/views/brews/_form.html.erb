@@ -28,17 +28,18 @@
     </div>
 
     <div class="mt title-sm" style="display: block">
-      <%= form.label :equipment_id,"Оборудование : " %>
-      <%= form.collection_select :equipment_id, Equipment.order(:name), :id, :name, {prompt: "Выбирите оборудование"}%>
+      <%= form.label :equipments_id,"Оборудование : " %>
+      <%= form.collection_select :equipments_id, Equipment.order(:name), :id, :name, {prompt: "Выбирите оборудование"}%>
     </div>
 
     <div class="mt title-sm" style="display: block">
       <%= form.label :checklist_id,"Протокол промывки : " %>
-      <%= form.collection_select :checklist_id, Checklist.order(:name), :id, :name, {prompt: "Выбирите протокол промывки"} %>
+   
+      <%= form.label :checklist_id, "#{@checklist.id} #{@checklist.start_date} #{@checklist.end_date}" %>
     </div>
 
   </div>
   <div class="mt">
-    <%= form.submit "Сохранить",class: "button button-main button-add" %>
+    <%= form.submit "Сохранить", class: "button button-main button-add" %>
   </div>
 <% end %>

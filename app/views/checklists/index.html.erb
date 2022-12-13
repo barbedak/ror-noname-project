@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 <div class="container">
-  <div class="title-md mb">Протоколы промывки оборудования</div>
-
+  <div class="title-md mb-sm">Протоколы промывки оборудования</div>
+  <%= link_to "Добавить", new_checklist_path, class: "button button-main button-add mb" %>
   <div id="checklists">
     <% @checklists.each do |checklist| %>
       <%= "#{ checklist.end_date } - #{ Brew.find(checklist.brew_id).batch } 
@@ -9,11 +9,11 @@
       
       <div class="mb">
         <%= link_to "Просмотреть протокол", checklist %>
-        <%= button_to "Удалить", @checklist, method: :delete, class: "button button-main button-delete" %>
+        <%= button_to "Удалить", checklist, method: :delete, class: "button button-main button-delete" %>
       </div>
 
     <% end %>
   </div>
 
-  <%= link_to "Добавить", new_checklist_path, class: "button button-main button-add mt-sm" %>
+  
 </div>

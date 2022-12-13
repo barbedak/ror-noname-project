@@ -47,11 +47,6 @@
       <%= form.collection_select :washer_id, Employee.order(:name), :id, :name,  {prompt: "Укажите сотрудника"} %>
     </div>
 
-    <div class="mt title-sm" style="display: block">
-      <%= form.label :cheking_id, "Проверяющий"%>
-      <%= form.collection_select :washer_id, Employee.order(:name), :id, :name, {prompt: "Укажите сотрудника"} %>
-    </div>
-
     <div>
       <%= form.submit "Сохранить", class: "button buttob-main button-add mt" %>
     </div>
