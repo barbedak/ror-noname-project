@@ -34,8 +34,11 @@
 
     <div class="mt title-sm" style="display: block">
       <%= form.label :checklist_id,"Протокол промывки : " %>
-   
-      <%= form.label :checklist_id, "#{@checklist.id} #{@checklist.start_date} #{@checklist.end_date}" %>
+      <% if @checklist.id.nil? %>
+        <%= form.label :checklist_id, "не создан" %>
+      <% else %>
+        <%= form.label :checklist_id, "#{ @checklist.id } #{ @checklist.start_date } #{ @checklist.end_date} " %>
+      <% end %>
     </div>
 
   </div>
