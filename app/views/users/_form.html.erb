@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
+<table>
+    <tr>
+      <td><%= form.label :employee_id, "Сотрудник" %></td>
+      <td><%= form.collection_select :employee_id, Employee.order(:name), :id, :name %></td>
+    </tr>
 
-  <div class="mt-sm">
-    <%= form.label :employee_id, "Сотрудник" %>
-    <%= form.collection_select :employee_id, Employee.order(:name), :id, :name %>
-  </div>
+    <tr>
+      <td><%= form.label :nickname, "Логин", class: "inline mt-sm" %></td>
+      <td><%= form.text_field :nickname %></td>
+    </tr>
 
-  <div>
-    <%= form.label :nickname, "Логин", class: "block mt-sm"%>
-    <%= form.text_field :nickname %>
-  </div>
+    <tr>
+      <td><%= form.label :password_digest, "Пароль", class: "inline mt-sm" %></td>
+      <td><%= form.text_field :password_digest %></td>
+    </tr>
 
-  <div>
-    <%= form.label :password_digest, "Пароль", class: "block mt-sm"%>
-    <%= form.text_field :password_digest %>
-  </div>
-
-  <div class="mt-sm">
-    <%= form.label :admin_rule, "Права администратора"%>
-    <%= form.check_box :admin_rule %>
-  </div>
-
+    <tr> 
+      <td><%= form.label :admin_rule, "Права администратора"%></td>
+      <td><%= form.check_box :admin_rule %></td>
+    </tr>
+  </table>
   <div>
     <%= form.submit "Сохранить", class: "button button-main button-add mt" %>
   </div>

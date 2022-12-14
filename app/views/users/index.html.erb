@@ -1,13 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="title-md mb">Пользователи</div>
-<%= link_to "Добавить", new_user_path, class: "button button-main button-add" %>
+<div class="title-md mb-sm">Пользователи</div>
+<%= link_to "Добавить", new_user_path, class: "button button-main button-add mb" %>
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>
-    <p>
+    <div class="mt-sm">
       <%= link_to "Редактировать", edit_user_path(user), class: "button button-main button-show" %>
-    </p>
+      <%= button_to "Удалить", user, method: :delete, class: "button button-main button-delete" %>
+    </div>
   <% end %>
 </div>
 
