@@ -12,6 +12,15 @@
 
   <body>
     <div class="wrapper">
+        <div style="text-align:right; padding-right: 20px;">
+          <% if current_user.present? %>
+            <%= "#{Employee.find(current_user.employee_id).name}"%>
+            <%# кнопка выхода из сессии %>
+            <%= button_to "Выйти", session_path, method: :delete, class: "button button-delete" %>
+          <% else %>
+            <%= link_to "Вход", new_session_path, class: "button button-show" %>
+          <% end %>
+        </div>
       <div class="navbar">
         <div><%= link_to 'Варки', brews_path, class: 'button button-main' %></div>
         <div><%= link_to 'Оборудование', equipment_index_path, class: 'button button-main' %></div>

@@ -5,20 +5,19 @@ class SessionsController < ApplicationController
   def create
     user_params = params.require(:session)
 
-    user = User.find_by(login: user_params[:login])
+    user = User.find_by(nickname: user_params[:nickname])
     # проверяем пароль пользователя, если пользователь нашелся (&). Вызов по цепочке
     user&.authenticate(user_params[:password])
+    respond_to do |format|
+      if user.present?
+        session[:user_id] = user.id
 
-    if user.present?
-      session[:user_id] = user.id
-
-      redirect_to root_path
-    else
-      # flash.now отобразить немедленно и один раз
-      flash.now[:alert] = 'Неправильный логин или пароль'
-
-      #повторно отрисовываем форму, на которою человек заходил
-      render :new
+        format.html { redirect_to root_path, notice: "Добро пожаловать, #{ Employee.find(user.employee_id).name }" }
+        format.json { render :show, status: :created, location: @user }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
     end
   end
 

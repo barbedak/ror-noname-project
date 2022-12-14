@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to redirect_to users_url, notice: "Пользователь успешно добавлен." }
+        format.html { redirect_to users_url, notice: "Пользователь успешно добавлен." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to redirect_to users_url, notice: "Пользователь успешно обновлен." }
+        format.html { redirect_to users_url, notice: "Пользователь успешно обновлен." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :nickname, :password_digest, :admin_rule, :employee_id)
+      params.require(:user).permit(:name, :nickname, :password, :admin_rule, :employee_id)
     end
 end
