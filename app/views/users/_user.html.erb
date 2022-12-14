@@ -1,27 +1,22 @@
 <div id="<%= dom_id user %>">
   <p>
-    <strong>Name:</strong>
-    <%= user.name %>
+    <strong>Сотрудник:</strong>
+    <%= Employee.find(user.employee_id).name %>
   </p>
 
   <p>
-    <strong>Nickname:</strong>
+    <strong>Логин:</strong>
     <%= user.nickname %>
   </p>
 
   <p>
-    <strong>Password digest:</strong>
+    <strong>Пароль:</strong>
     <%= user.password_digest %>
   </p>
 
   <p>
-    <strong>Admin rule:</strong>
-    <%= user.admin_rule %>
-  </p>
-
-  <p>
-    <strong>Employee:</strong>
-    <%= user.employee_id %>
+    <strong>Права администратора:</strong>
+    <%= "ДА" if user.admin_rule %>
   </p>
 
 </div>

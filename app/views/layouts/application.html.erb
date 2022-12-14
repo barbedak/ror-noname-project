@@ -20,8 +20,9 @@
         <div><%= link_to 'Сотрудники', employees_path, class: 'button button-main'%></div>
         <div><%= link_to 'Серии полупродукта', series_index_path, class: 'button button-main' %></div>
         <div class="mt-sm"><%= link_to 'Протоколы промывки', checklists_path, class: 'button button-main' %></div>
+        <div class="mt-sm"><%= link_to 'Пользователи', users_path, class: 'button button-main' %></div>
       </div>
-      <div>
+      <div class="container">
         <%= yield %>
       </div>
     </div>
