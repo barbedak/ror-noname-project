@@ -1,8 +1,10 @@
-<p style="color: green"><%= notice %></p>
+<div>
+  <p style="color: green"><%= notice %></p>
 
-<%= render @brew %>
+  <%= render @brew %>
 
-<div class="mt">
-  <%= link_to "Редактировать", edit_brew_path(@brew) , class: 'button button-main button-add' %>
-  <%= button_to "Удалить", @brew, method: :delete, class: 'button button-main button-delete mb' %>
-</div>
+  <div class="mt">
+    <%= link_to "Редактировать", edit_brew_path(@brew) , class: 'button button-main button-add' %>
+    <%= button_to "Удалить", @brew, method: :delete, class: 'button button-main button-delete mb' %>
+  </div>
+<div>

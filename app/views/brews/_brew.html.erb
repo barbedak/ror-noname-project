@@ -16,13 +16,13 @@
 
   <div style="display: block">
     <div class="text">Оборудование:</div>
-    <%# =Equipment.find(brew.equipment_id).name %>
+    <%= Equipment.find(brew.equipments_id).name %>
   </div>
 
-    <div style="display: block">
-    <div class="text">Протокол промывки:</div>
+    <%# <div style="display: block">
+    <div class="text">Протокол промывки:</div> %>
     <%# checklist = Checklist.find(brew.checklist_id) %>
-    <%= link_to "Ссылка на прокотол промывки", @checklist class: "link"%>
+    <%# link_to "Ссылка на прокотол промывки", @checklist class: "link"%>
   </div>
 
 </div>

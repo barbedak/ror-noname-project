@@ -64,7 +64,11 @@ class BrewsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_brew
       @brew = Brew.find(params[:id])
-      # @checklist = Checklist.find(@brew.checklist_id) unless @brew.checklist_id.nil?
+      if @brew.checklist_id.nil?
+        @checklist = Checklist.new
+      else
+        @checklist = Checklist.find(@brew.checklist_id)
+      end
     end
 
     # Only allow a list of trusted parameters through.
