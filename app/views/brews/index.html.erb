@@ -1,16 +1,17 @@
-<div class="container">
+<div>
   <p style="color: green"><%= notice %></p>
 
   <div class="title-md">Список варок</div>
+  
+  <% if current_user.admin_rule %>
+    <%= link_to "Добавить", new_brew_path, class: 'button button-main button-add mt' %>
+  <% end %>
 
-  <%= link_to "Добавить", new_brew_path, class: 'button button-main button-add mt' %>
   <div id="brews" class="mt">
     <% @brews.each do |brew| %>
       <div class="mb ml-md">
         <%= link_to "#{brew.date} #{brew.batch} - #{brew.checklist_id}", brew, class: "link" %>
       </div>
-      <%#= render brew %>
-     
     <% end %>
   </div>
 </div>
