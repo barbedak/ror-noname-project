@@ -17,19 +17,22 @@
             <%= "#{Employee.find(current_user.employee_id).name}"%>
             <%# кнопка выхода из сессии %>
             <%= button_to "Выйти", session_path, method: :delete, class: "button button-delete" %>
-          <% else %>
-            <%= link_to "Вход", new_session_path, class: "button button-show" %>
           <% end %>
         </div>
       <div class="navbar">
-        <div><%= link_to 'Варки', brews_path, class: 'button button-main' %></div>
-        <div><%= link_to 'Оборудование', equipment_index_path, class: 'button button-main' %></div>
-        <div><%= link_to 'Типы оборудования', equipment_types_path, class: 'button button-main' %></div>
-        <div><%= link_to 'Должности', job_titles_path , class: 'button button-main' %></div>
-        <div><%= link_to 'Сотрудники', employees_path, class: 'button button-main'%></div>
-        <div><%= link_to 'Серии полупродукта', series_index_path, class: 'button button-main' %></div>
-        <div class="mt-sm"><%= link_to 'Протоколы промывки', checklists_path, class: 'button button-main' %></div>
-        <div class="mt-sm"><%= link_to 'Пользователи', users_path, class: 'button button-main' %></div>
+        <% if current_user.present? %>
+          <% if current_user.admin_rule %>
+            <div><%= link_to 'Оборудование', equipment_index_path, class: 'button button-main mr-sm' %></div>
+            <div><%= link_to 'Типы оборудования', equipment_types_path, class: 'button button-main mr-sm' %></div>
+            <div><%= link_to 'Должности', job_titles_path , class: 'button button-main mr-sm' %></div>
+            <div><%= link_to 'Сотрудники', employees_path, class: 'button button-main mr-sm'%></div>
+            <div><%= link_to 'Серии полупродукта', series_index_path, class: 'button button-main' %></div>
+            <div><%= link_to 'Пользователи', users_path, class: 'button button-main mt-sm mr-sm' %></div>
+            <div><%= link_to 'Варки', brews_path, class: 'button button-main mt-sm mr-sm' %></div>
+          <% end %>
+          
+          <div><%= link_to 'Протоколы промывки', checklists_path, class: 'button button-main mt-sm mr-sm' %></div>
+        <% end %>
       </div>
       <div class="container">
         <%= yield %>
