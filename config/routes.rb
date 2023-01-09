@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :products
   resources :series
   resource :session, only: %i[new create destroy]
+  resources :mainpage
 end
