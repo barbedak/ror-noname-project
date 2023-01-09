@@ -1,0 +1,12 @@
+<div>
+  <div> Промывка </div>
+  <div> Список варок:</div>
+  <div>(нажмите для создания протокола промывки)</div>
+  <% @brews.each do |brew| %>
+    <% product = @products.find(brew.product_id)%>
+    <% series = @serieses.find(product.series_id)%>
+    <% equipment = @equipments.find(brew.equipments_id) %>
+    <%= link_to "#{equipment.name} - #{brew.batch} - #{series.name} - #{product.name}", brew %>
+  <% end %>
+
+</div>
