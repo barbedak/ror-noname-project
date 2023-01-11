@@ -34,7 +34,7 @@
 
     <div class="mt title-sm" style="display: block">
       <%= form.label :brew_id, "Варка"%>
-      <%= form.collection_select :brew_id, Brew.order(:batch), :id, :batch %>
+      <%= form.collection_select :brew_id, Brew.all.where(washed: false).order(:batch), :id, :batch %>
     </div>
 
     <div class="mt title-sm" style="display: block">
