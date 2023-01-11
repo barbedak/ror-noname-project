@@ -13,6 +13,7 @@ class ChecklistsController < ApplicationController
   # GET /checklists/new
   def new
     @checklist = Checklist.new
+    @brew = Brew.find(params[:brew_id])
   end
 
   # GET /checklists/1/edit

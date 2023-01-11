@@ -33,18 +33,21 @@
     </div>
 
     <div class="mt title-sm" style="display: block">
-      <%= form.label :brew_id, "Варка"%>
-      <%= form.collection_select :brew_id, Brew.all.where(washed: false).order(:batch), :id, :batch %>
+      <%= form.label "Варка (партия): #{@brew.batch}"%>
+      <% product = Product.find(@brew.product_id) %>
+      <% serias = Series.find(product.series_id) %>
+      <%= form.label "#{product.name} #{serias.name}"%>
+      <%# <% form.collection_select :brew_id, Brew.all.where(washed: false).order(:batch), :id, :batch %>
     </div>
 
     <div class="mt title-sm" style="display: block">
-      <%= form.label :equipment_id, "Оборудование"%>
-      <%= form.collection_select :equipment_id, Equipment.order(:name), :id, :name %>
+      <%= form.label :equipment_id, "Оборудование: #{Equipment.find(@brew.equipments_id).name}"%>
+      
     </div>
 
     <div class="mt title-sm" style="display: block">
-      <%= form.label :washer_id, "Мойщик"%>
-      <%= form.collection_select :washer_id, Employee.order(:name), :id, :name,  {prompt: "Укажите сотрудника"} %>
+      <%= form.label :washer_id, "Мойщик #{Employee.find(current_user.employee_id).name}"%>
+      <% form.collection_select :washer_id, Employee.order(:name), :id, :name,  {prompt: "Укажите сотрудника"} %>
     </div>
 
     <div>

@@ -6,7 +6,7 @@
     <% product = @products.find(brew.product_id)%>
     <% series = @serieses.find(product.series_id)%>
     <% equipment = @equipments.find(brew.equipments_id) %>
-    <%= link_to "#{equipment.name} - #{brew.batch} - #{series.name} - #{product.name}", brew %>
+    <%= link_to "#{equipment.name} - #{brew.batch} - #{series.name} - #{product.name}", new_checklist_path(brew_id: brew.id) %>
   <% end %>
 
 </div>
