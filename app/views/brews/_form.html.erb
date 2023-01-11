@@ -40,6 +40,10 @@
         <%= form.label :checklist_id, "#{ @checklist.id } #{ @checklist.start_date } #{ @checklist.end_date} " %>
       <% end %>
     </div>
+    <div>
+      <%= label :washed, "была промывка"%>
+      <%= form.check_box :washed %>
+    </div>
 
   </div>
   <div class="mt">

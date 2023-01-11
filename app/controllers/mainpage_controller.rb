@@ -6,7 +6,7 @@ class MainpageController < ApplicationController
 
   def index
     @equipments = Equipment.all
-    @brews = Brew.all
+    @brews = Brew.all.where(washed: false)
     @products = Product.all
     @serieses = Series.all
   end
