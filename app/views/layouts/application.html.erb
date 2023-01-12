@@ -18,7 +18,7 @@
             <%# кнопка выхода из сессии %>
             <%= button_to "Выйти", session_path, method: :delete, class: "button button-delete" %>
           <% else %>
-            <%= link_to 'Вход', session_path, class: 'button button-main mt-sm mr-sm' %>
+            <%= link_to 'Вход', new_session_path, class: 'button button-main mt-sm mr-sm' %>
           <% end %>
         </div>
       <div class="navbar">
