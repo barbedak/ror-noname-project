@@ -1,5 +1,10 @@
 <div class="container">
-  <div class="title-md">Новый протокол</div>
+  <div class="title-md">Протокол промывки</div>
+  <div class="title-sm">Оборудование: <%= Equipment.find(@brew.equipments_id).name %></div>
+  <% product = Product.find(@brew.product_id) %>
+  <% serias = Series.find(product.series_id) %>
+  <div class="title-sm">Полупродукт:  <%= product.name %> <%= serias.name %></div>
+  <div class="title-sm mb">Мойщик: <%= Employee.find(current_user.employee_id).name %></div>
 
   <%= render "form_new", checklist: @checklist %>
 </div>
