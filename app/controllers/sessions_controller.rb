@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       if user.present?
         session[:user_id] = user.id
 
-        format.html { redirect_to brews_path, notice: "Добро пожаловать, #{ Employee.find(user.employee_id).name }" }
+        format.html { redirect_to mainpage_index_path, notice: "Добро пожаловать, #{ Employee.find(user.employee_id).name }" }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
