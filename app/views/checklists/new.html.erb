@@ -7,4 +7,21 @@
   <div class="title-sm mb">Мойщик: <%= Employee.find(current_user.employee_id).name %></div>
 
   <%= render "form_new", checklist: @checklist %>
+
+  <script>
+    document.getElementById("btn-stage1").onclick = function() {
+      let elements = document.querySelectorAll('.stage1');
+      for (let elem of elements){
+        elem.classList.toggle('through');
+      }
+    };
+
+    document.getElementById("btn-stage2").onclick = function() {
+      document.getElementById("checklist_cheking_id").disabled = true;
+      let elements = document.querySelectorAll('.stage2');
+      for (let elem of elements){
+        elem.classList.toggle('through');
+      }
+    };
+  </script>
 </div>

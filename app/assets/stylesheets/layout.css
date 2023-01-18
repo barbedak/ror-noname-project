@@ -19,9 +19,9 @@ body {
   padding: 20px;
 }
 
-/* .container{
-  background: #E7F1CF;
-} */
+.through{
+  text-decoration: line-through;
+}
 
 .navbar{
   align-items: center;
