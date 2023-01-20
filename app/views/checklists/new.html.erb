@@ -1,10 +1,11 @@
 <div class="container">
-  <div class="title-md">Протокол промывки</div>
-  <div class="title-sm">Оборудование: <%= Equipment.find(@brew.equipments_id).name %></div>
+  <div class="title-md mb">Протокол промывки</div>
+  <div>Дата: <span class="text-red text-bold">  </span> </div>
+  <div class="">Оборудование: <span class="text-red text-bold"><%= Equipment.find(@brew.equipments_id).name %> </span> </div>
   <% product = Product.find(@brew.product_id) %>
   <% serias = Series.find(product.series_id) %>
-  <div class="title-sm">Полупродукт:  <%= product.name %> <%= serias.name %></div>
-  <div class="title-sm mb">Мойщик: <%= Employee.find(current_user.employee_id).name %></div>
+  <div class="">Полупродукт:  <span class="text-red text-bold"><%= product.name %> <%= serias.name %></span> </div>
+  <div class="mb">Мойщик: <%= Employee.find(current_user.employee_id).name %></div>
 
   <%= render "form_new", checklist: @checklist %>
 

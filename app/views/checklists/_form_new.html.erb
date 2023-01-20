@@ -11,6 +11,15 @@
     </div>
   <% end %>
 
+  <% form.text_field :start_date %>
+  <% form.date_field :end_date %>
+  <% form.time_field :start_time %>
+  <% form.time_field :end_time %>
+  <% form.text_field :brew_id %>
+  <% form.text_field :equipment_id %>
+  <% form.text_field :washer_id %>
+  <% form.text_field :cheking_id %>
+
   <div style="display: inline-block">
     
     <div class= "title-sm">Предварительное ополаскивание</div>
@@ -98,6 +107,8 @@
     </ol>
     <input type="button" id="btn-stage2" value="Этап 2 Выполнен!">
     <div></div>
-
+    <div>
+      <%= form.submit "Сохранить", class: "button button-main button-add mt" %>
+    </div>
   </div>
 <% end %>
